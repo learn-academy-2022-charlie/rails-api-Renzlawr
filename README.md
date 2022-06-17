@@ -3,13 +3,17 @@ The Forest Service is considering a proposal to place in conservancy a forest of
 
 / Story: As a developer I can create an animal model in the database. An animal has the following information: common name, latin name, kingdom (mammal, insect, etc.).
 
-Story: As the consumer of the API I can see all the animals in the database.
-
+/ Story: As the consumer of the API I can see all the animals in the database.
 Hint: Make a few animals using Rails Console
-Story: As the consumer of the API I can update an animal in the database.
-Story: As the consumer of the API I can destroy an animal in the database.
-Story: As the consumer of the API I can create a new animal in the database.
+
+/ Story: As the consumer of the API I can update an animal in the database.
+
+/ Story: As the consumer of the API I can destroy an animal in the database.
+
+/ Story: As the consumer of the API I can create a new animal in the database.
+
 Story: As the consumer of the API I can create a sighting of an animal with date (use the datetime datatype), a latitude, and a longitude.
+
 Hint: An animal has_many sightings. (rails g resource Sighting animal_id:integer ...)
 Hint: Datetime is written in Rails as “year-month-day hr:min:sec" (“2022-01-28 05:40:30")
 Story: As the consumer of the API I can update an animal sighting in the database.
@@ -18,12 +22,16 @@ Story: As the consumer of the API, when I view a specific animal, I can also see
 Hint: Checkout the Ruby on Rails API docs on how to include associations.
 Story: As the consumer of the API, I can run a report to list all sightings during a given time period.
 Hint: Your controller can look like this:
+
+```
 class SightingsController < ApplicationController
   def index
     sightings = Sighting.where(date: params[:start_date]..params[:end_date])
     render json: sightings
   end
 end
+```
+
 Remember to add the start_date and end_date to what is permitted in your strong parameters method. In Postman, you will want to utilize the params section to get the correct data. Also see Routes with Params .
 
 Stretch Challenges
